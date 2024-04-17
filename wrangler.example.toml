@@ -1,0 +1,33 @@
+name = "dca-alpaca-worker"
+compatibility_date = "2024-03-20"
+main = "src/index.ts"
+send_metrics = true
+
+kv_namespaces = [{ binding = "BINDING_NAME", id = "BINDING_ID" }]
+
+[env.staging]
+workers_dev = true
+
+kv_namespaces = [
+	{ binding = "BINDING_NAME", preview_id = "BINDING_ID", id = "BINDING_ID" },
+]
+
+[env.production]
+kv_namespaces = [{ binding = "BINDING_NAME", id = "BINDING_ID" }]
+
+# Environment variables
+[vars]
+APCA_HOST = "https://paper-api.alpaca.markets/v2"
+
+[env.staging.vars]
+APCA_HOST = "https://paper-api.alpaca.markets/v2"
+
+[env.production.vars]
+APCA_HOST = "https://api.alpaca.markets/v2"
+
+# Cron triggers
+[triggers]
+crons = ["0 13 * * 2,3,4,5,6"]
+
+[env.staging.triggers]
+crons = ["*/10 9-16 * * *"]
