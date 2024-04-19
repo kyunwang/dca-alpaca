@@ -8,21 +8,8 @@ import { buyStock } from "../utils/apiUtils";
 const app = new Hono();
 
 app.get("/", async (c) => {
-	// const value = await c.env.DB_ALPACA_DCA.list();
-	// return new Response(JSON.stringify(value.keys));
-	// return new Response(value.keys);
-
 	return c.text("API route");
 });
-
-// Trigger manually by calling this route
-// Will bypass the schedule and execute configured DCA
-// app.post("/dca", async (c) => {
-
-// Get current config settings, eventually to edit in UI
-// app.get("/dca", async (c) => {
-// return c.text(JSON.stringify("DCA route"));
-// });
 
 app.post("/order", zValidator("json", OrderParser), async (c) => {
 	const json = c.req.valid("json");

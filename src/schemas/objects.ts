@@ -40,9 +40,3 @@ export type Weekday = z.infer<typeof WeekdayParser>;
 export type StockConfig = z.infer<typeof StockConfigParser>;
 
 export type Order = z.infer<typeof OrderParser>;
-// {
-// 	"symbol": "AAPL",
-// 	"notional": 25.0,
-// 	"enabled": true,
-// 	"schedule": "" Optional -> Cronjob format
-// }
