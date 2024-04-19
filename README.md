@@ -8,7 +8,7 @@ npm run deploy
 ```
 
 
-npx wrangler dev --test-scheduled
+npx wrangler dev:cron
 
 curl "http://localhost:8787/__scheduled?cron=*+*+*+*+*"
 
@@ -27,8 +27,8 @@ Initial idea was to have a separate local RPI which sets jobs based on a json sc
 
 
 
-$$
-TODO
+
+## TODO
 - [ ] Maybe - Send status per dca execution? or weekly status? In case things went wrong. OR just enable it from the broker side as they already have it built-in
 - [ ] Cloudflare Auth 
 Maybe Durable Objects will get an free tier when it's out of Beta, then we would ahv emore granular control over the cronjobs and on entry bases

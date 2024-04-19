@@ -12,8 +12,12 @@ kv_namespaces = [
 	{ binding = "BINDING_NAME", preview_id = "BINDING_ID", id = "BINDING_ID" },
 ]
 
+services = [{ binding = "BINDING_NAME", service = "SERVICE_NAME-staging" }]
+
 [env.production]
 kv_namespaces = [{ binding = "BINDING_NAME", id = "BINDING_ID" }]
+
+services = [{ binding = "BINDING_NAME", service = "SERVICE_NAME" }]
 
 # Environment variables
 [vars]
