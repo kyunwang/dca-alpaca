@@ -31,7 +31,11 @@ APCA_HOST = "https://api.alpaca.markets/v2"
 
 # Cron triggers
 [triggers]
-crons = ["0 13 * * 2,3,4,5,6"]
+crons = ["0 13 * * 5"]
 
 [env.staging.triggers]
-crons = ["*/10 9-16 * * *"]
+crons = ["*/10 16 * * 1,2,3,4,5"]
+
+# 
+[placement]
+mode = "smart"
